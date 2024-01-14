@@ -6,7 +6,7 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 09:31:48 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/14 09:33:06 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/14 10:52:24 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int div;
-	int mod:
+	int	div;
+	int	mod;
 
 	div = *a / *b;
 	mod = *a % *b;

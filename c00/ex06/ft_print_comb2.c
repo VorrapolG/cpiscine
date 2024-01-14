@@ -6,7 +6,7 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 09:21:46 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/14 09:26:14 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/14 10:55:18 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ void	ft_print_comb2(void)
 {
 	int	a;
 	int	b;
-	int 	check;
+	int	check;
 
 	a = 0;
-	while (a <=99)
+	while (a <= 99)
 	{
 		b = a + 1;
 		while (b <= 99)
 		{
-			check = !(a ==98 && b == 99);
+			check = !(a == 98 && b == 99);
 			ft_write_comb(a, b, check);
 		}
 		a++;

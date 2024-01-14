@@ -6,7 +6,7 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:16:49 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/14 08:59:49 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/14 10:28:00 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_putchar(char c)
 
 void	ft_print_alphabet(void)
 {
-
 	char	letter;
 
 	letter = 'a';
