@@ -1,1 +1,4 @@
-git log --pretty=%H | head -n 5
+#!/bin/sh
+
+commits=$(git log -5 | grep ^commit | cut -d " " -f 2)
+echo $commits | tr ' ' '\n\$'
