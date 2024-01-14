@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 23:59:54 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/14 08:55:22 by vgundtha         ###   ########.fr       */
+/*   Created: 2024/01/14 09:27:06 by vgundtha          #+#    #+#             */
+/*   Updated: 2024/01/14 09:27:25 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_ft(int *nbr)
 {
-	write(1, &c, 1);
-}
-
-void	ft_is_negative(int n)
-{
-	if (n < 0)
-		ft_putchar(''N');
-	else
-		ft_putchar('P');
+	*nbr = 42;
 }

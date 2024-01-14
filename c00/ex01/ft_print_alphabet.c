@@ -6,26 +6,26 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:16:49 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/10 20:07:03 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/14 08:59:49 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_putchar(char c)
 {
-	char	c;
-
-	c = 'a';
-	while (c <= 'z')
-	{
-		write(1, &c, 1);
-		c++;
-	}
+	write(1, &c, 1);
 }
 
-/*int	main(void)
+void	ft_print_alphabet(void)
 {
-	ft_print_alphabet();
-	return (0);
-}*/
+
+	char	letter;
+
+	letter = 'a';
+	while (letter <= 'z')
+	{
+		ft_putchar(letter);
+		letter++;
+	}
+}

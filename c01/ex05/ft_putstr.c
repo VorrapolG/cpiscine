@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 23:59:54 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/14 08:55:22 by vgundtha         ###   ########.fr       */
+/*   Created: 2024/01/14 09:34:12 by vgundtha          #+#    #+#             */
+/*   Updated: 2024/01/14 09:35:46 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,18 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_is_negative(int n)
+void	ft_putstr(char *str)
 {
-	if (n < 0)
-		ft_putchar(''N');
-	else
-		ft_putchar('P');
+	char next_char;
+
+	while (true)
+	{
+		next_char = *str;
+		if (next_char == '\0')
+		{
+			break;
+		}
+		ft_putchar(next_char);
+		str++;
+	}
 }

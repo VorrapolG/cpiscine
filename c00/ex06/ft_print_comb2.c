@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 23:59:54 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/14 08:55:22 by vgundtha         ###   ########.fr       */
+/*   Created: 2024/01/14 09:21:46 by vgundtha          #+#    #+#             */
+/*   Updated: 2024/01/14 09:26:14 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,35 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_is_negative(int n)
+void	ft_write_comb(int a, int b, int check)
 {
-	if (n < 0)
-		ft_putchar(''N');
-	else
-		ft_putchar('P');
+	ft_putchar(48 + a / 10);
+	ft_putchar(48 + a % 10);
+	ft_putchar(' ');
+	ft_putchar(48 + b / 10);
+	ft_putchar(48 + b % 10);
+	if (check)
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
+}
+
+void	ft_print_comb2(void)
+{
+	int	a;
+	int	b;
+	int 	check;
+
+	a = 0;
+	while (a <=99)
+	{
+		b = a + 1;
+		while (b <= 99)
+		{
+			check = !(a ==98 && b == 99);
+			ft_write_comb(a, b, check);
+		}
+		a++;
+	}
 }

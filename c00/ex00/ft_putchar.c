@@ -6,7 +6,7 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:04:11 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/12 18:41:23 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/14 08:50:02 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,3 @@ void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
-
-/*int	main(void)
-{
-	ft_putchar('c');
-	return (0);
-}*/

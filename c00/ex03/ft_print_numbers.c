@@ -6,26 +6,26 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 23:53:25 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/10 23:53:30 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/14 08:53:37 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_print_numbers(void)
 {
-	char	c;
+	char	number;
 
-	c = '0';
-	while (c <= '9')
+	number = '0';
+	while (number <= '9')
 	{
-		write(1, &c, 1);
-		c++;
+		ft_putchar(number);
+		number++;
 	}
 }
 
-/*int	main(void)
-{
-	ft_print_numbers();
-	return (0);
-}*/

@@ -6,26 +6,25 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:38:04 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/10 23:50:34 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/14 09:01:12 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+void	putchar(char c)
 {
-	char	c;
-
-	c = 'z';
-	while (c >= 'a')
-	{
-		write (1, &c, 1);
-		c--;
-	}
+	write(1, &c, 1);
 }
 
-/*int	main(void)
+void	ft_print_reverse_alphabet(void)
 {
-	ft_print_reverse_alphabet();
-	return (0);
-}*/
+	char	letter;
+
+	letter = 'z';
+	while (letter >= 'a')
+	{
+		ft_putchar(letter);
+		letter--;
+	}
+}
