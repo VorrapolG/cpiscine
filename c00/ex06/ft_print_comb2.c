@@ -45,6 +45,7 @@ void	ft_print_comb2(void)
 		{
 			check = !(a == 98 && b == 99);
 			ft_write_comb(a, b, check);
+			b++;
 		}
 		a++;
 	}
