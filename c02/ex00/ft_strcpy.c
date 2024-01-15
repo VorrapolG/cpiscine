@@ -6,22 +6,22 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:46:51 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/15 15:02:27 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/15 16:37:45 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *str)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
 	i = 0;
 	while (src[i] != '\0')
 	{
-		dest[i] = src[i]
-		i++
+		dest[i] = src[i];
+		i++;
 	}
-	dest[i] != '\0';
+	dest[i] = '\0';
 	return (dest);
 }
 
@@ -29,9 +29,8 @@ char	*ft_strcpy(char *dest, char *str)
 
 int	main(void)
 {
-	char myString[30];
+	char myString[30] = "Hello Wordl!";
 	char mDestination[30];
-	myString = "Hello World";
 	ft_strcpy(mDestination, myString);
 	printf("%s\n", mDestination);
 	return (0);
