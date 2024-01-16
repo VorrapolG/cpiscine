@@ -6,24 +6,22 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:34:38 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/16 14:48:32 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/17 01:46:52 by vgundthahome     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_lowercase(char *str)
 {
-	int index;
-	index = 0;
-	if (str[index] == '\0')
+	if (*str == '\0')
 	{
 		return (1);
 	}
-	while (str[index] != '\0')
+	while (*str != '\0')
 	{
-		if (!(str[index] >= 'a' && str[index] <= 'z'))
+		if (!(*str >= 'a' && *str <= 'z'))
 			return (0);
 		else
-		index++;
+		str++;
 	}
 	return (1);
 }
@@ -42,4 +40,3 @@ int	main(void)
 	
 	return (0);
 }
-

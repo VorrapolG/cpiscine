@@ -6,7 +6,7 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:46:51 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/15 17:13:41 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/16 22:27:22 by vgundthahome     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,25 @@ char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
+	while (*src)
+	    *(dest + i++) = *src++;
+	*(dest + i) = '\0';
 	return (dest);
 }
 
 #include <stdio.h>
 
-int	main(void)
+char *ft_strcpy(char *dest, char *src);
+
+int     main(void)
 {
-	char myString[30] = "Hello Wordl!";
-	char mDestination[30];
-	ft_strcpy(mDestination, myString);
-	printf("%s\n", mDestination);
-	return (0);
+	char dst[10];
+
+	char *ret = ft_strcpy(dst,"abcdef");
+	printf("Expect result : abcdef\n");
+    	printf("User   result1: %s\n",dst);
+    	printf("User   result2: %s\n",ret);
+	
+    	return (0);
 }
 

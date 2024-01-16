@@ -6,68 +6,68 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:00:57 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/16 19:43:04 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/17 01:41:42 by vgundthahome     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*#include <stdio.h>*/
-int	ft_alpnbr(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	if (c >= 'a' && c <= 'z')
-		return (2);
-	if (c >= 'A' && c <= 'Z')
-		return (3);
-	return (0);
-}
 
-char	*ft_strcapitalize(char *str)
-{
-	int	i;
+char *ft_strcapitalize(char *str) {
+    // Save the original pointer for returning at the end
+    char *v = str;
 
-	i = 0;
-	if (str[i] >= 'a' && str[i] <= 'z')
-		str[i] -= 32;
-	i++;
-	while (str[i])
-	{
-		if (ft_alpnbr(str[i - 1]) == 0 && ft_alpnbr(str[i]) == 2)
-			str[i] -= 32;
-		if (ft_alpnbr(str[i - 1]) > 0 && ft_alpnbr(str[i]) == 3)
-			str[i] += 32;
-		i++;
+    // Capitalize the first character if it is a lowercase letter
+	if (*str >= 'a' && *str <= 'z')
+        *str -= 32;
+	
+    // Move to the next character
+    ++str;
+
+    // Iterate through the rest of the string
+    while (*str) {
+        // Convert uppercase letters to lowercase
+        if (*str >= 'A' && *str <= 'Z'){
+            *str += 32;
 	}
-	return (str);
+        // Check if the previous character is not a digit or a letter
+        if (!( (*(str - 1) >= '0' && *(str - 1) <= '9') ||
+               (*(str - 1) >= 'A' && *(str - 1) <= 'Z') ||
+               (*(str - 1) >= 'a' && *(str - 1) <= 'z') ))
+        {
+            // Check if the current character is a lowercase letter
+            if (*str >= 'a' && *str <= 'z')
+                *str -= 32;
+        }
+
+        // Move to the next character
+        ++str;
+    }
+
+    // Return the original pointer
+    return v;
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 
-char *ft_strcapitalize(char *str);
 
-
- 22 }int     main(void)
+int     main(void)
 {
 	char *retr;
 
 	char str[255];
+	char str2[255];
 
         char *str0 = "salut, coMment tu vAs ? 42mOts quaRante-deux; Cinquante+et+un";
+        char *str1 = "AAAaAaAa bbbbbBBBB CcCcCcC";
 	
 	printf("Expect result : 0 Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un$\n");
         
 	strcpy(str,str0);
+	strcpy(str,str1);
 	retr = ft_strcapitalize(str);
+	retr = ft_strcapitalize(str2);
 	printf("User   result : %d %s$\n",(int)(str-retr),str);
+	printf("User   result : %s\n",str2);
 
     	return (0);
-}*/
-
-/*int	main()
-{
-	char abc[] = "salut, comment tu vas ? 42Mots quarante-deux; cinquante+et+un";
-	printf("%s\n", abc);
-	ft_strcapitalize(abc);
-	printf("%s\n", abc);
-	return (0);
-}*/
+}

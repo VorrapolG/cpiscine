@@ -6,7 +6,7 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:18:19 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/16 15:37:18 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/17 00:49:08 by vgundthahome     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,4 @@ int     main(void)
     	printf("User   result : %d %d %d %d %d %d %d %d\n",ret1,ret2,ret3,ret7,ret8,ret4,ret5,ret6);
 	
    	return (0);
-!(str[i] >= 32 && str[i] <= 126))
- 24                 return (0);
- 25                 else}
+}

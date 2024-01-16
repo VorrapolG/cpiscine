@@ -6,66 +6,52 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:47:25 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/15 17:43:51 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/16 22:30:58 by vgundthahome     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*char	*ft_strcpy(char *dest, char *src)
-{
-	int i;
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}*/
-
-//char	*ft_strncpy(char *dest, char *src, unsigned int n);
-
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int i;
-	i = 0;
-	while (src[i] != '\0' && i < n)
+    	int	i;
+	i = 0 ;
+	while (*src && n)
 	{
-		dest[i] = src [i];
-		i++;
+	    *(dest + i++) = *src++;
+	    --n;
 	}
-	dest[i] = '\0';
+	if (n--)
+	    *(dest + i++) = '\0';
 	return (dest);
 }
 
 #include <stdio.h>
-
-int	main(void)
-{
-	char myString[30] = "Hello World!";
-	char mDestination[30];
-	ft_strncpy(mDestination, myString, 5);
-	printf("%s\n", mDestination);
-	return (0);
-}
-
-
-/*#include <stdio.h>
 #include <string.h>
 
-int	main()
-{
-	// '\0' is null terminator in order to outoput string properly
-	// Testing how strcpy and strncpy function work
-	char src[10] = "0123456789";
-	
-	char dest1[50];
-	strcpy(dest1, src);
-	printf("dest1: %s\n", dest1);
-	
-	char dest2[10];
-	strncpy(dest2, src, 6);
-	printf("dest2: %s\n", dest2);
-	return (0);
+char *ft_strncpy(char *dest, char *src, unsigned int n);
 
-}*/
+int     main(void)
+{
+	char dstr[10];
+	char dst[10];
+
+	char *retr = strncpy(dstr,"abcdef",sizeof(dstr));
+	char *ret = ft_strncpy(dst,"abcdef",sizeof(dst));
+	printf("Expect result : 0 abcdef 0 0 0 0\n");
+    	printf("Real   result : %d %s %d %d %d %d\n",(int)(dstr-retr),dstr,dstr[6],dstr[7],dstr[8],dstr[9]);
+    	printf("User   result : %d %s %d %d %d %d\n",(int)(dst-ret),dst,dst[6],dst[7],dst[8],dst[9]);
+	// abcdef
+	retr = strncpy(dstr,"1234",3); // dest=abcdef, src=1234, n = 3
+	ret = ft_strncpy(dst,"1234",3);
+	printf("Expect result : 0 123def 0 0 0 0\n");
+    	printf("Real   result : %d %s %d %d %d %d\n",(int)(dstr-retr),dstr,dstr[6],dstr[7],dstr[8],dstr[9]);
+    	printf("User   result : %d %s %d %d %d %d\n",(int)(dst-ret),dst,dst[6],dst[7],dst[8],dst[9]);
+	// 123def
+	retr = strncpy(dstr,"ABCD",5);
+	ret = ft_strncpy(dst,"ABCD",5);
+	printf("Expect result : 0 ABCD 0 0 0 0\n");
+    	printf("Real   result : %d %s %d %d %d %d\n",(int)(dstr-retr),dstr,dstr[6],dstr[7],dstr[8],dstr[9]);
+    	printf("User   result : %d %s %d %d %d %d\n",(int)(dst-ret),dst,dst[6],dst[7],dst[8],dst[9]);
+
+    	return (0);
+}
+
