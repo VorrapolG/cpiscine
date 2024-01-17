@@ -6,7 +6,7 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:34:38 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/17 01:46:52 by vgundthahome     ###   ########.fr       */
+/*   Updated: 2024/01/17 16:55:10 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	ft_str_is_lowercase(char *str)
 		if (!(*str >= 'a' && *str <= 'z'))
 			return (0);
 		else
-		str++;
+			str++;
 	}
 	return (1);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -39,4 +39,4 @@ int	main(void)
 	printf("%d\n", ft_str_is_lowercase(myString3));
 	
 	return (0);
-}
+}*/

@@ -5,24 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 14:46:51 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/16 22:27:22 by vgundthahome     ###   ########.fr       */
+/*   Created: 2024/01/17 17:13:08 by vgundtha          #+#    #+#             */
+/*   Updated: 2024/01/17 17:13:21 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <unistd.h>*/
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (*src)
-	    *(dest + i++) = *src++;
+		*(dest + i++) = *src++;
 	*(dest + i) = '\0';
 	return (dest);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 char *ft_strcpy(char *dest, char *src);
 
@@ -36,5 +37,4 @@ int     main(void)
     	printf("User   result2: %s\n",ret);
 	
     	return (0);
-}
-
+}*/
