@@ -6,47 +6,57 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:00:57 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/17 17:00:17 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/17 20:54:18 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*ft_strlowcase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		i++;
+	}
+	return (str);
+}
+
 char	*ft_strcapitalize(char *str)
 {
-	char	*v;
+	int	i;
+	int	s;
 
-	v = str;
-	if (*str >= 'a' && *str <= 'z')
-		*str -= 32;
-	++str;
-	while (*str)
+	i = 0;
+	s = 1;
+	ft_strlowcase(str);
+	while (str[i] != '\0')
 	{
-		if (*str >= 'A' && *str <= 'Z')
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			*str += 32;
+			if (s == 1)
+				str[i] -= 32;
+			s = 0;
 		}
-		if (!((*(str - 1) >= '0' && *(str - 1) <= '9')
-				|| (*(str - 1) >= 'A' && *(str - 1) <= 'Z')
-				|| (*(str - 1) >= 'a' && *(str - 1) <= 'z')))
-		{
-			if (*str >= 'a' && *str <= 'z')
-				*str -= 32;
-		}
-		++str;
+		else if (str[i] >= '0' && str[i] <= '9')
+			s = 0;
+		else
+			s = 1;
+		i++;
 	}
+	return (str);
 }
-return v;
 
 /*#include <stdio.h>
 #include <string.h>
 
-
-int     main(void)
+int	main()
 {
-	char retr[30];
-        char *str = "aaa 42bbb -ccc +DDD";
-	printf("Expect result :Aaa 42Bbb -Ccc +Ddd\n");
-	strcpy(retr, str);
-	ft_strcapitalize(retr);
-	printf("User   result : %s\n",retr);
-    	return (0);
+	char abc[] = "Nn mM aAa BbB+ppp-pp";
+	printf("%s\n", abc);
+	ft_strcapitalize(abc);
+	printf("%s\n", abc);
+	return (0);
 }*/

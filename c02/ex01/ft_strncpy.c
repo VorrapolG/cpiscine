@@ -6,22 +6,25 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:47:25 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/17 16:50:45 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/18 01:17:35 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (*src && n)
+	while (src[i] != '\0' && i < n)
 	{
-		*(dest + i++) = *src++;
-		--n;
+		dest[i] = src[i];
+		i++;
 	}
-	if (n--)
-		*(dest + i++) = '\0';
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
 

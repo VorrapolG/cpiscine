@@ -6,20 +6,36 @@
 /*   By: vgundthahome <vgundthahome.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 21:57:17 by vgundthahome      #+#    #+#             */
-/*   Updated: 2024/01/17 17:12:27 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/17 22:56:12 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	len;
+	unsigned int	len;
+	unsigned int	i;
 
-	len = 0;
-	while (*(src + len) && --size)
-		*dest++ = *(src + len++);
-	*dest = '\0';
-	while (*(src + len))
-		++len;
+	len = ft_strlen(src);
+	i = 0;
+	if (size != 0)
+	{
+		while (src [i] != '\0' && size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
 	return (len);
 }
 
@@ -30,13 +46,13 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned int size);
 
 int     main(void)
 {
-	char dstr[10];
-	char dst[10];
-	strncpy(dstr,"0123456789",sizeof(dstr));
-	strncpy(dst,"0123456789",sizeof(dstr));
-	int retr = strlcpy(dstr,"abcdef",sizeof(dstr));
-	int ret = ft_strlcpy(dst,"abcdef",sizeof(dst));
-    	printf("Real   result : %d %s %d %d \n",retr,dstr,dstr[2],dstr[3]);
-    	printf("User   result : %d %s %d %d \n",ret,dst,dst[2],dst[3]);
-    	return (0);
+	char	mDest[20];
+	char	mSrc[] = "Hello, World!";
+
+	unsigned int length = ft_strlcpy(mDest, mSrc, 20);
+
+	printf("Length: %u Char: %s\n", length, mDest);
+	return(0);
+
+
 }*/

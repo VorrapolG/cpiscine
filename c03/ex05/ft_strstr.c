@@ -6,22 +6,22 @@
 /*   By: vgundthahome <vgundthahome.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 00:02:41 by vgundthahome      #+#    #+#             */
-/*   Updated: 2024/01/17 00:19:03 by vgundthahome     ###   ########.fr       */
+/*   Updated: 2024/01/17 21:21:20 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strstr(char *haystack, char *needle) {
+char *ft_strstr(char *str, char *to_find) {
     int i = 0, j = 0;
 
-    if (needle[j] == '\0')
-        return haystack;
+    if (to_find[j] == '\0')
+        return str;
 
-    while (haystack[i] != '\0') {
-        while (haystack[i + j] == needle[j] && haystack[i + j] != '\0')
+    while (str[i] != '\0') {
+        while (str[i + j] == to_find[j] && str[i + j] != '\0')
             j++;
 
-        if (needle[j] == '\0')
-            return haystack + i;
+        if (to_find[j] == '\0')
+            return str + i;
 
         i++;
         j = 0;
