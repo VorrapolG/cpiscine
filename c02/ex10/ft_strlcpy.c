@@ -6,7 +6,7 @@
 /*   By: vgundthahome <vgundthahome.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 21:57:17 by vgundthahome      #+#    #+#             */
-/*   Updated: 2024/01/17 22:56:12 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/18 02:29:38 by vgundthahome     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	i = 0;
 	if (size != 0)
 	{
-		while (src [i] != '\0' && size - 1)
+		while (src [i] != '\0' && i < size - 1)
 		{
 			dest[i] = src[i];
 			i++;
