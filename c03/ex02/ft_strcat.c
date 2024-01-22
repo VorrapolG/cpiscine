@@ -6,7 +6,7 @@
 /*   By: vgundthahome <vgundthahome.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 23:21:46 by vgundthahome      #+#    #+#             */
-/*   Updated: 2024/01/16 23:37:53 by vgundthahome     ###   ########.fr       */
+/*   Updated: 2024/01/22 15:39:08 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(void)
 
 	strcat(dest, src);
 
-	printf("dest: %s\n", dest);
+	printf("original fucntion dest: %s\n", strcat(dest, src));
+	printf("exercise function dest: %s\n", ft_strcat(dest, src));
 	return (0);
 }
