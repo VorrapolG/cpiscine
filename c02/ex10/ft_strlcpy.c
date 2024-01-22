@@ -6,7 +6,7 @@
 /*   By: vgundthahome <vgundthahome.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 21:57:17 by vgundthahome      #+#    #+#             */
-/*   Updated: 2024/01/18 02:29:38 by vgundthahome     ###   ########.fr       */
+/*   Updated: 2024/01/19 19:19:19 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned int size);
 int     main(void)
 {
 	char	mDest[20];
-	char	mSrc[] = "Hello, World!";
+	char	mSrc[] = "Hello World";
 
 	unsigned int length = ft_strlcpy(mDest, mSrc, 20);
 
