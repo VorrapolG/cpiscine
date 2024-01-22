@@ -6,7 +6,7 @@
 /*   By: vgundthahome <vgundthahome.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 23:46:12 by vgundthahome      #+#    #+#             */
-/*   Updated: 2024/01/16 23:53:23 by vgundthahome     ###   ########.fr       */
+/*   Updated: 2024/01/22 14:34:57 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 }
 
 #include <stdio.h>
+#include <string.h>
 
-int main() {
-    char dest[20] = "Hello, ";
+int main() 
+{
+    char dest[] = "Hello, ";
     char src[] = "world!";
-    ft_strncat(dest, src, 3);  // Concatenate only the first 3 characters of src
-    printf("%s\n", dest);  // Output: Hello, wor
-    return 0;
+    printf("original function: %s\n", strncat(dest, src, 3)); 
+    char myDest[] = "Hello, ";
+    char mySrc[] = "world!";
+    printf("exercise function: %s\n", ft_strncat(myDest, mySrc, 3)); 
+    return (0);
 }
