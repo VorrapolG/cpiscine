@@ -15,17 +15,17 @@
 
 int	solve(int table[4][4], int position, int input[16])
 {
-	int	result;
+	int	size;
 
 	if (position == 16)
 		return (1);
 	{
-		result = 1;
-		while (result <= 4)
+		size = 1;
+		while (size <= 4)
 		{
-			if (viewable_double(table, position, result) == 0)
+			if (viewable_double(table, position, size) == 0)
 			{
-				table[position / 4][position % 4] = result;
+				table[position / 4][position % 4] = size;
 				if (viewable_condition(table, position, input) == 0)
 				{
 					if (solve(table, position + 1, input) == 1)
@@ -33,7 +33,7 @@ int	solve(int table[4][4], int position, int input[16])
 				}
 					table[position / 4][position % 4] = 0;
 			}
-			result++;
+			size++;
 		}
 	}
 	return (0);
