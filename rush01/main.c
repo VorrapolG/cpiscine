@@ -17,7 +17,8 @@ int	solve(int table[4][4], int position, int input[16])
 {
 	int	result;
 
-	while (position < 16)
+	if (position == 16)
+		return (1);
 	{
 		result = 1;
 		while (result <= 4)
@@ -30,16 +31,12 @@ int	solve(int table[4][4], int position, int input[16])
 					if (solve(table, position + 1, input) == 1)
 						return (1);
 				}
-				else
-				{
 					table[position / 4][position % 4] = 0;
-				}
 			}
 			result++;
 		}
-		return (0);
 	}
-	return (1);
+	return (0);
 }
 
 void	display_solution(int table[4][4])
@@ -67,7 +64,7 @@ int	main(int ac, char **av)
 	int	*input;
 	int	table[4][4];
 
-	if (ac != 2 || ft_strlen(av[1]) != 31)
+	if (ac < 2 || ft_strlen(av[1]) < 31)
 	{
 		ft_putstr("Error\n");
 		return (0);

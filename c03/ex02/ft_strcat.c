@@ -6,42 +6,34 @@
 /*   By: vgundthahome <vgundthahome.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 23:21:46 by vgundthahome      #+#    #+#             */
-/*   Updated: 2024/01/22 15:39:08 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/23 20:31:03 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (dest[i] != '\0')
+	while (*dest != '\0')
 	{
-		i++;
+    		*dest++;
 	}
-	j = 0;
-	while (src[j] != '\0')
+    	while (*src != '\0')
 	{
-		dest[i] = src [j];
-		i++;
-		j++;
+    		*dest++ = *src++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	*dest = '\0';
+	return dest;
 }
 
 #include <stdio.h>
 #include <string.h>
 
-int	main(void)
+int	main()
 {
-    	char dest[20] = "This and ";
-	char src[5] = "that";
-
-	strcat(dest, src);
-
-	printf("original fucntion dest: %s\n", strcat(dest, src));
-	printf("exercise function dest: %s\n", ft_strcat(dest, src));
+    	char str1[30] = "This and ";
+	char str2[30] = "that";
+    	char str3[30] = "This and ";
+	char str4[30] = "that";
+	printf("original: %s\n", strcat(str1, str2));
+	printf("exercise: %s\n", ft_strcat(str3, str4));
 	return (0);
 }

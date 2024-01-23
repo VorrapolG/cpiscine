@@ -6,7 +6,7 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:00:57 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/17 20:54:18 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:18:58 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 
 int	main()
 {
-	char abc[] = "Nn mM aAa BbB+ppp-pp";
+	char abc[] = "Nn mM 32aAa BbB+ppp-pp";
 	printf("%s\n", abc);
 	ft_strcapitalize(abc);
 	printf("%s\n", abc);
 	return (0);
-}*/
+}

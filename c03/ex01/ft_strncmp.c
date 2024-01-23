@@ -6,21 +6,23 @@
 /*   By: vgundthahome <vgundthahome.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 23:19:19 by vgundthahome      #+#    #+#             */
-/*   Updated: 2024/01/22 14:23:17 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/23 20:06:10 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
 	unsigned int	i;
 
 	i = 0;
-	while ((s1[i] || s2[i]) && (i < n))
+	while ((i < n) && (*s1 || *s2))
 	{
-		if (s1[i] < s2[i])
+		if (*s1 < *s2)
 			return (-1);
-		if (s1[i] > s2[i])
+		if (*s1 > *s2)
 			return (1);
+		s1++;
+		s2++;
 		i++;
 	}
 	return (0);
@@ -28,9 +30,9 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 
 /*#include <stdio.h>
 #include <string.h>
-
-int main()
+int main() 
 {
-    	printf("%d\n", strncmp("Hello", "HelloWorld", 8));
-	printf("%d\n", ft_strncmp("Hello", "HelloWorld", 8));
+	printf("Original: %d\n", strncmp("Hello2", "Hello1", 6));
+	printf("Exercise: %d\n", ft_strncmp("Hello2", "Hello1", 6));
+	return 0;
 }*/

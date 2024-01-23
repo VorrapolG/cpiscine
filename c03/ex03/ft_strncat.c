@@ -14,10 +14,10 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
     	char *pDest;
 
-    	while (*dest){
+    	while (*dest != '\0'){
 	    dest++;
 	}
-	while (nb-- > 0 && (*dest++ = *src++));
+	while (nb-- > 0 && *src != '\0' (*dest++ = *src++));
 	*dest = '\0';
 	return pDest;
 }
