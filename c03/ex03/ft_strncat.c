@@ -6,32 +6,37 @@
 /*   By: vgundthahome <vgundthahome.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 23:46:12 by vgundthahome      #+#    #+#             */
-/*   Updated: 2024/01/22 14:34:57 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/24 18:01:18 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-    	char *pDest;
+	char	*dest_ptr;
 
-    	while (*dest != '\0'){
-	    dest++;
+	dest_ptr = dest;
+	while (*dest_ptr != '\0')
+	{
+		dest_ptr++;
 	}
-	while (nb-- > 0 && *src != '\0' (*dest++ = *src++));
-	*dest = '\0';
-	return pDest;
+	while (nb-- && *src != '\0')
+	{
+		*dest_ptr++ = *src++;
+	}
+	*dest_ptr = '\0';
+	return (dest);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 
 int main() 
 {
-    char dest[] = "Hello, ";
-    char src[] = "world!";
-    printf("original function: %s\n", strncat(dest, src, 3)); 
-    char myDest[] = "Hello, ";
-    char mySrc[] = "world!";
-    printf("exercise function: %s\n", ft_strncat(myDest, mySrc, 3)); 
+    char str1[30] = "I'm, ";
+    char str2[30] = "NOOB";
+    char str3[30] = "I'm, ";
+    char str4[30] = "NOOB";
+    printf("original function: %s\n", strncat(str1, str2, 4)); 
+    printf("exercise function: %s\n", ft_strncat(str3, str4, 4)); 
     return (0);
-}
+}*/

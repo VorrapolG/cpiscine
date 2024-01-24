@@ -6,51 +6,42 @@
 /*   By: vgundtha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 14:18:06 by vgundtha          #+#    #+#             */
-/*   Updated: 2024/01/17 15:04:19 by vgundtha         ###   ########.fr       */
+/*   Updated: 2024/01/24 23:21:18 by vgundtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_putnbr(int nb)
 {
-	long	nbl;
-	char	c[10];
-	short	i;
-
-	nbl = nb;
-	i = 0;
-	if (nb == 0)
+	if (nb == -2147483648)
 	{
-		write(1, "0", 1);
-		return;
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
 	}
-	if (nbl < 0 )
+	else if (nb < 0)
 	{
-		nbl *= -1;
-		write(1, "-", 1);
+		ft_putchar('-');
+		nb = -nb;
+		ft_putnbr(nb);
 	}
-	while (nbl % 10)
+	else if (nb > 9)
 	{
-		c[i++] = (nbl % 10) + 48;
-		nbl /= 10;
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
-	while (i >= 0)
-		write(1, &c[--i], 1);
+	else
+		ft_putchar(nb + 48);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	ft_putnbr(-42);
-	write(1, "\n", 1);
-	ft_putnbr(0);
-	write(1, "\n", 1);
-	ft_putnbr(42);
-	write(1, "\n", 1);
-	//2147483647 are the maximum integer data type = 4 bytes 
-	ft_putnbr(2147483647);
-	write(1, "\n", 1);
-	ft_putnbr(-2147483647);
-	write(1, "\n", 1);
-}
-
+	ft_putnbr(-2147483648);
+	return (0);
+}*/
