@@ -46,8 +46,8 @@ int ft_ultimate_range(int **range, int min, int max);
 
 int main(void)
 {
-    int min = 9;
-    int max = 60;
+    int min = 0;
+    int max = 10;
     int *result;
     int size = ft_ultimate_range(&result, min, max);
 
@@ -69,6 +69,6 @@ int main(void)
         i++;
     }
     printf("\n");
-    free(result); // Don't forget to free the allocated memory
+    free(result);
     return 0;
 }*/

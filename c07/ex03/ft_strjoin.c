@@ -41,19 +41,21 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (str1);
 }
 
-int main(void)
+/*int	main(void)
 {
-    char *strings[] = {"Hello","world","!"};
-    char *separator = ", ";
+	char	*strings[] = {"Hello", "World", "!"};
+	char	*separator = ",";
+	char	*result;
 
-    char *result = ft_strjoin(3, strings, separator);
-
-    if (result != NULL) {
-        printf("Concatenated string: %s\n", result);
-        free(result); // Don't forget to free the allocated memory
-    } else {
-        printf("Error: Memory allocation or invalid size\n");
-    }
-
-    return 0;
-}
+	result = ft_strjoin (3, strings, separator);
+	if (result != NULL) 
+	{
+		printf("Concatenated string: %s\n", result);
+		free(result);
+	}
+	else
+	{
+		printf("Error: Memory allocation or invalid size\n");
+	}
+	return (0);
+}*/

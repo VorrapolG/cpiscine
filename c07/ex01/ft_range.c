@@ -41,8 +41,8 @@ int *ft_range(int min, int max);
 
 int main(void)
 {
-    int min = 9;
-    int max = 60;
+    int min = 0;
+    int max = 10;
     int *result = ft_range(min, max);
     if (result == NULL)
     {
@@ -57,6 +57,6 @@ int main(void)
         i++;
     }
     printf("\n");
-    free(result); // Don't forget to free the allocated memory
+    free(result);
     return 0;
 }*/
